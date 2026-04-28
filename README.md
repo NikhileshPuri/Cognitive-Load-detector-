@@ -1,4 +1,3 @@
-markdown
 # EEG Cognitive Load Decoding – Riemannian & Tangent Space Pipeline
 
 > **Complete pipeline for offline and real‑time decoding of cognitive load (low/medium/high) from EEG**  
@@ -324,4 +323,4 @@ Citation
 If you use this pipeline in academic work, please cite:
 
 text
-[Nikhilesh Puri], "EEG Cognitive Load Decoding using Riemannian Tangent Space", GitHub repository, 2025.
+[Nikhilesh Puri], "EEG Cognitive Load Decoding using Riemannian Tangent Space", GitHub repository, 2026.

@@ -295,12 +295,15 @@ Covariance matrices are regularised by adding reg * trace(C)/n_ch * I to each ma
 Multi‑class vs. Binary Load
 The pipeline predicts 12 tasks first and then aggregates probabilities into 3 load levels. If you prefer to directly predict load (3 classes), you would need to change the label column in the training CSV and retrain.
 
-Example Results
+Results
 Task classification (12 tasks) – Tangent Space + Random Forest
 
 Test accuracy: 96.36%
 
 Macro F1: 96.72%
+
+The XGBoost classifier trained on tangent space features (5133 dimensions from theta, alpha, beta bands) achieved a test accuracy of 97.23% and macro F1 score of 97.18% on 12 task classes (N=24,582 test epochs). This slightly outperforms the Random Forest baseline (96.36% accuracy). The confusion matrix shows excellent discrimination, with minor confusions primarily between zeroBACK/twoBACK and PVT/zeroBACK. Training employed a fallback xgb.train routine due to scikit‑learn wrapper version incompatibility, running 200 boosting rounds with early stopping (best iteration at round 199). The model is saved as tangent_xgb.joblib and ready for inference on new subjects.
+
 
 Confusion matrix shows very few misclassifications (e.g., some confusion between twoBACK and zeroBACK, but generally excellent separation).
 
